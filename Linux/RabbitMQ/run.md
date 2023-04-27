@@ -17,7 +17,7 @@ chmod -R 777 ./rabbitmq
 docker exec -it rabbitmq /bin/bash
 
 # 开启管理界面 
-rabbitmq-plugins enable rabbitmq_management
+#rabbitmq-plugins enable rabbitmq_management
 
 # 开启延时插件
 rabbitmq-plugins enable rabbitmq_delayed_message_exchange
