@@ -1,14 +1,16 @@
 version: "3"
 services:
   mongo:
-    image: mongo:4.4.4      # 指定MongoDB的镜像版本
-    container_name: mongodb # 容器名
-    restart: always         # 容器自动重启策略
+    image: mongo:4.4.4            # 指定MongoDB的镜像版本
+    container_name: mongo-service # 容器名
+    restart: always               # 容器自动重启策略
     ports:
       - "27017:27017" # 端口映射
     volumes:
-      - ./mongodb/data:/data/db  # 挂载数据目录文件
-      - ./mongodb/log:/data/log  # 挂载日志目录文件
+      - ./mongodb/data:/data/db          # 挂载数据目录文件
+      - ./mongodb/log:/data/log          # 挂载日志目录文件
+      - ./mongodb/config:/data/configdb  # 挂载配置文件目录
     environment: # 指定环境变量
-      - MONGO_INITDB_ROOT_USERNAME=admin  # 设置MongoDB的用户名
-      - MONGO_INITDB_ROOT_PASSWORD=123456 # 设置MongoDB的用户密码
+      TZ: Asia/Shanghai
+      MONGO_INITDB_ROOT_USERNAME: admin  # 设置MongoDB的用户名
+      MONGO_INITDB_ROOT_PASSWORD: 123456 # 设置MongoDB的用户密码
