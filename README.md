@@ -19,7 +19,7 @@ chmod +x /usr/local/bin/docker-compose
 
 3、查看版本信息
 ```shell
-docker-compose -version
+docker-compose version
 ```
 4、 重启docker服务:
 
